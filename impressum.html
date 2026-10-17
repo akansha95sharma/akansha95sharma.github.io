@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – Dayzle</title>
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --primary: #4338CA;
+      --primary-hover: #3730A3;
+      --border: #E5E7EB;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121117;
+        --card-bg: #1C1A24;
+        --text: #F3F4F6;
+        --text-muted: #9CA3AF;
+        --primary: #6366F1;
+        --primary-hover: #818CF8;
+        --border: #2E2B3D;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p { margin-bottom: 1rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.25rem; }
+    .nav-links {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Impressum</h1>
+        <h2>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</h2>
+    <p><strong>Diensteanbieter / Herausgeber:</strong><br>
+    Akansha Sharma<br>
+    Near Bus Stand, Ward No. 08, Mohalla Darogan<br>Sri Madhopur, Distt. Sikar, Rajasthan 332715<br>Indien</p>
+
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href="mailto:akansha.sharma18395@gmail.com">akansha.sharma18395@gmail.com</a><br>
+    
+    Website: <a href="https://akansha95sharma.github.io">https://akansha95sharma.github.io</a></p>
+
+    <h2>Verantwortlich für redaktionelle Inhalte gemäß § 18 Abs. 2 MStV</h2>
+    <p>Akansha Sharma<br>
+    Near Bus Stand, Ward No. 08, Mohalla Darogan<br>Sri Madhopur, Distt. Sikar, Rajasthan 332715<br>Indien</p>
+
+    <h2>Verbraucherstreitbeilegung</h2>
+    <p>Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+    <nav class="nav-links">
+      <a href="index.html">← Zur Startseite</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="privacy.html">Datenschutz</a>
+    </nav>
+  </main>
+</body>
+</html>

@@ -1,40 +1,183 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dayzle</title>
-<meta name="description" content="Dayzle – an Android app by Akansha Sharma.">
-<style>
-  :root { --bg:#f7f8fb; --card:#ffffff; --text:#1d2330; --muted:#5b6475; --accent:#4f46e5; --line:#e5e8ef; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#12141a; --card:#1b1e26; --text:#eceef3; --muted:#a3aabb; --accent:#8b85ff; --line:#2a2e39; }
-  }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.6; }
-  main { max-width:640px; margin:0 auto; padding:64px 16px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:32px; }
-  h1 { margin:0 0 4px; font-size:2.2rem; }
-  .by { color:var(--muted); margin:0 0 24px; }
-  p { margin:0 0 16px; }
-  a { color:var(--accent); }
-  nav { display:flex; gap:20px; flex-wrap:wrap; margin-top:24px; padding-top:20px; border-top:1px solid var(--line); }
-  footer { text-align:center; color:var(--muted); font-size:.85rem; margin-top:24px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dayzle – Ein Tag. Drei Rätsel.</title>
+  <meta name="description" content="Dayzle – Dein tägliches Denk-Ritual. Jeden Tag ein neues Worträtsel, Sudoku und ein kniffliges Rätsel.">
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --primary: #3730A3;
+      --primary-hover: #312E81;
+      --accent: #F59E0B;
+      --border: #E5E7EB;
+      --pill-bg: #EEF2FF;
+      --pill-text: #3730A3;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121117;
+        --card-bg: #1C1A24;
+        --text: #F3F4F6;
+        --text-muted: #9CA3AF;
+        --primary: #6366F1;
+        --primary-hover: #4F46E5;
+        --accent: #F59E0B;
+        --border: #2E2B3D;
+        --pill-bg: #28243D;
+        --pill-text: #A5B4FC;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      width: 100%;
+      max-width: 600px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 32px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--pill-bg);
+      color: var(--pill-text);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 20px;
+      letter-spacing: 0.03em;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .feature-icon {
+      font-size: 1.25rem;
+    }
+    .btn-playstore {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 14px 28px;
+      border-radius: 14px;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 4px 12px rgba(55, 48, 163, 0.25);
+    }
+    .btn-playstore:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+    footer {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    footer a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-<main>
-  <div class="card">
+  <main class="card">
+    <div class="badge">Tägliches Gehirntraining</div>
     <h1>Dayzle</h1>
-    <p class="by">An Android app by Akansha Sharma</p>
-    <p>Welcome to the official page for Dayzle. Dayzle is available for Android devices.</p>
-    <p>For questions, feedback or support, email <a href="mailto:akansha.sharma18395@gmail.com">akansha.sharma18395@gmail.com</a>.</p>
-    <nav>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="mailto:akansha.sharma18395@gmail.com">Contact</a>
-    </nav>
-  </div>
-  <footer>&copy; 2026 Akansha Sharma</footer>
-</main>
+    <div class="tagline">Ein Tag. Drei Rätsel.</div>
+    <p class="description">
+      Dayzle ist dein ruhiges, tägliches Denk-Ritual für zwischendurch: Drei handverlesene Knobelspiele ohne Hektik, aufdringliche Timer oder störende Reizüberflutung.
+    </p>
+
+    <div class="features">
+      <div class="feature-item">
+        <span class="feature-icon">🔤</span>
+        <span><strong>Worträtsel:</strong> Errate das gesuchte Wort in 6 Versuchen.</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🔢</span>
+        <span><strong>Sudoku:</strong> Jeden Tag ein frisches, logisch lösbares Zahlenrätsel.</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">💡</span>
+        <span><strong>Rätsel & Redewendung:</strong> Knifflige Rätsel und Bilderrätsel mit Hinweisen.</span>
+      </div>
+    </div>
+
+    <a href="https://play.google.com/store/apps/details?id=com.akanshasharma.dayzle" class="btn-playstore" target="_blank" rel="noopener noreferrer">
+      <span>Jetzt bei Google Play laden</span>
+      <span>→</span>
+    </a>
+
+    <footer>
+      <a href="privacy.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </footer>
+  </main>
 </body>
 </html>
